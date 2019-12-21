@@ -24,7 +24,7 @@ function isValidSwipe(
   velocityThreshold,
   directionalOffset,
   directionalOffsetThreshold
-) {debugger;
+) {
   return (
     Math.abs(velocity) > velocityThreshold &&
     Math.abs(directionalOffset) < directionalOffsetThreshold
@@ -46,22 +46,6 @@ class GestureRecognizer extends Component {
       onPanResponderTerminate: responderEnd
     });
   }
-
-  // componentWillReceiveProps(props) {
-  //   this.swipeConfig = Object.assign(swipeConfig, props.config);
-  // }
-
-  // componentWillMount() {
-  //   const responderEnd = this._handlePanResponderEnd.bind(this);
-  //   const shouldSetResponder = this._handleShouldSetPanResponder.bind(this);
-  //   this._panResponder = PanResponder.create({
-  //     //stop JS beautify collapse
-  //     onStartShouldSetPanResponder: shouldSetResponder,
-  //     onMoveShouldSetPanResponder: shouldSetResponder,
-  //     onPanResponderRelease: responderEnd,
-  //     onPanResponderTerminate: responderEnd
-  //   });
-  // }
 
   _handleShouldSetPanResponder(evt, gestureState) {
     return (
